@@ -2,6 +2,8 @@ plugins {
     kotlin("js")
 }
 
+val kotlin_js_version: String by project
+
 group = "com.helicoptera"
 version = "1.0-SNAPSHOT"
 
@@ -13,12 +15,12 @@ repositories {
 dependencies {
     testImplementation(kotlin("test-js"))
     implementation(project(":application"))
-    implementation("org.jetbrains:kotlin-react:16.13.1-pre.113-kotlin-1.4.0")
-    implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.113-kotlin-1.4.0")
-    implementation("org.jetbrains:kotlin-styled:1.0.0-pre.113-kotlin-1.4.0")
-    implementation("org.jetbrains:kotlin-react-router-dom:5.1.2-pre.113-kotlin-1.4.0")
-    implementation("org.jetbrains:kotlin-redux:4.0.0-pre.113-kotlin-1.4.0")
-    implementation("org.jetbrains:kotlin-react-redux:5.0.7-pre.113-kotlin-1.4.0")
+    implementation("org.jetbrains:kotlin-react:16.13.1-pre.113-kotlin-$kotlin_js_version")
+    implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.113-kotlin-$kotlin_js_version")
+    implementation("org.jetbrains:kotlin-styled:1.0.0-pre.113-kotlin-$kotlin_js_version")
+    implementation("org.jetbrains:kotlin-react-router-dom:5.1.2-pre.113-kotlin-$kotlin_js_version")
+    implementation("org.jetbrains:kotlin-redux:4.0.0-pre.113-kotlin-$kotlin_js_version")
+    implementation("org.jetbrains:kotlin-react-redux:5.0.7-pre.113-kotlin-$kotlin_js_version")
 }
 
 kotlin {
