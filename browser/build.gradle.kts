@@ -21,6 +21,7 @@ dependencies {
     implementation("org.jetbrains:kotlin-react-router-dom:5.1.2-pre.113-kotlin-$kotlin_js_version")
     implementation("org.jetbrains:kotlin-redux:4.0.0-pre.113-kotlin-$kotlin_js_version")
     implementation("org.jetbrains:kotlin-react-redux:5.0.7-pre.113-kotlin-$kotlin_js_version")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:$kotlin_js_version")
 }
 
 kotlin {
