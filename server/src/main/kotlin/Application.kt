@@ -41,11 +41,20 @@ fun Application.module(testing: Boolean = false) {
 //        cookie<Session>(session)
     }
     routing {
+        this.root()
+        authenticate("auth-jwt") {
+            get("/lol") {
+                val principal = call.authentication.principal<JWTPrincipal>()
+                val subjectString = principal!!.payload.subject.removePrefix("auth0|")
+                call.respondText("Hello, $subjectString!")
+            }
+        }
         static {
+            //Url path to static folder
             static("static") {
+                //Package name for resources
                 resources("static")
             }
         }
-        this.root()
     }
 }
