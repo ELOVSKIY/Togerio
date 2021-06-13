@@ -5,13 +5,12 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
     }
-    
 }
-rootProject.name = "Togerio"
 
+rootProject.name = "Togerio"
 
 include(":application")
 include(":android")
 include(":server")
 include(":browser")
-
+include("use-cases")
