@@ -1,0 +1,9 @@
+POST http://localhost:8083/registration
+Content-Type: application/json
+
+{
+  "username": "helicoptera",
+  "password": "strong_password"
+}
+
+###
