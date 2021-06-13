@@ -1,7 +1,7 @@
-package data.model.task
+package com.helicoptera.data.model.task
 
-import data.model.TaskStatus
-import data.model.team.TeamMember
+import com.helicoptera.data.model.TaskStatus
+import com.helicoptera.data.model.team.TeamMember
 
 data class Task(
     val number: Int,

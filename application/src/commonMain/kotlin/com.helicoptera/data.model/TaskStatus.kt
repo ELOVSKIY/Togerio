@@ -1,4 +1,4 @@
-package data.model
+package com.helicoptera.data.model
 
 enum class TaskStatus {
     CREATE_REQUEST,

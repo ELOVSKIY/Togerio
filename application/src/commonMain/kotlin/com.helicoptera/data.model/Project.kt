@@ -1,4 +1,4 @@
-package data.model
+package com.helicoptera.data.model
 
 data class Project(
     val name: String,

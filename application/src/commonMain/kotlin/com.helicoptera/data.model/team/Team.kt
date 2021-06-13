@@ -1,4 +1,4 @@
-package data.model.team
+package com.helicoptera.data.model.team
 
 data class Team(
     val name: String,
