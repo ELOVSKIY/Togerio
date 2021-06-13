@@ -15,6 +15,7 @@ version = "1.0-SNAPSHOT"
 
 dependencies {
     implementation(project(":application"))
+    implementation(project(":use-cases"))
 
     //Ktor
     implementation("io.ktor:ktor-server-core:$ktor_version")
