@@ -1,6 +1,5 @@
 package com.helicoptera.data.model.task
 
-import com.helicoptera.data.model.TaskStatus
 import com.helicoptera.data.model.team.TeamMember
 
 data class Task(
