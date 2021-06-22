@@ -1,6 +1,6 @@
 package com.helicoptera.togerio.user
 
-import com.helicoptera.data.model.User
+import com.helicoptera.togerio.data.model.User
 
 
 interface CrudUserCases {

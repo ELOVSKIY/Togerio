@@ -26,7 +26,7 @@ kotlin {
     iosX64 {
         binaries {
             framework {
-                baseName = "application"
+                baseName = "model"
             }
         }
     }

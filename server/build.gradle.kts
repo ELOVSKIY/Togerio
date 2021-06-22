@@ -14,7 +14,7 @@ group = "com.helicoptera"
 version = "1.0-SNAPSHOT"
 
 dependencies {
-    implementation(project(":application"))
+    implementation(project(":model"))
     implementation(project(":use-cases"))
 
     //Ktor

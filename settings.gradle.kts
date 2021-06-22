@@ -9,7 +9,7 @@ pluginManagement {
 
 rootProject.name = "Togerio"
 
-include(":application")
+include(":model")
 include(":android")
 include(":server")
 include(":browser")

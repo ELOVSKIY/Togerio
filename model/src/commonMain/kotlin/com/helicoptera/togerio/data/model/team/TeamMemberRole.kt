@@ -1,4 +1,4 @@
-package com.helicoptera.data.model.team
+package com.helicoptera.togerio.data.model.team
 
 enum class TeamMemberRole {
     OWNER,

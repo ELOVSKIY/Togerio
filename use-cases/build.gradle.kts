@@ -33,7 +33,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":application"))
+                implementation(project(":model"))
             }
         }
         val commonTest by getting {
