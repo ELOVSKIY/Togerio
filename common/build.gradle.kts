@@ -26,12 +26,16 @@ kotlin {
     iosX64 {
         binaries {
             framework {
-                baseName = "model"
+                baseName = "common"
             }
         }
     }
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation(project(":model"))
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
