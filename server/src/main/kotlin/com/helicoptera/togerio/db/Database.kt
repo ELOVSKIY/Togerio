@@ -5,12 +5,19 @@ import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 
-fun initDB() {
+fun initDB(testing: Boolean) {
     Database.connect("jdbc:h2:./myh2file", "org.h2.Driver")
-    initSchemas()
+    dropSchemas()
+    createSchemas()
 }
 
-private fun initSchemas() {
+private fun dropSchemas() {
+    transaction {
+        SchemaUtils.drop(Users)
+    }
+}
+
+private fun createSchemas() {
     transaction {
         SchemaUtils.create(Users)
     }

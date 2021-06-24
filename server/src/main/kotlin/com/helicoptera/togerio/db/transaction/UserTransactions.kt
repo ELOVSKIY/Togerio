@@ -5,14 +5,17 @@ import com.helicoptera.togerio.db.table.Users
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
+import java.lang.IllegalStateException
 
-fun registration(user: User) {
+fun insertUser(user: User) : User{
     transaction {
         Users.insert {
             it[username] = user.username
             it[password] = md5(user.password)
         }
     }
+
+    return fetchUserByUsername(user.username) ?: throw IllegalStateException()
 }
 
 fun fetchUserByUsername(username: String): User? {
@@ -25,10 +28,10 @@ fun fetchUserByUsername(username: String): User? {
     return if (resultRow != null) Users.toUserModel(resultRow) else null
 }
 
-fun fetchUserByUserId(userId: Int): User? {
+fun fetchUserByUserId(id: Int): User? {
     val resultRow = transaction {
         Users.select {
-            Users.id eq userId
+            Users.id eq id
         }.toList()
     }.firstOrNull()
 

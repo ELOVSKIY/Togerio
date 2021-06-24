@@ -15,6 +15,7 @@ version = "1.0-SNAPSHOT"
 
 dependencies {
     implementation(project(":model"))
+    implementation(project(":common"))
     implementation(project(":use-cases"))
 
     //Ktor
