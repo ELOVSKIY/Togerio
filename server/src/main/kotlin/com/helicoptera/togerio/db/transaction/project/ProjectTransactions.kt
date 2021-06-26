@@ -7,7 +7,7 @@ import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.lang.IllegalStateException
 
-fun createProject(project: Project): Project {
+fun createProject(project: Project): Project? {
     transaction {
         Projects.insert {
             it[name] = project.name
@@ -16,7 +16,7 @@ fun createProject(project: Project): Project {
         }
     }
 
-    return fetchProjectByCode(project.code) ?: throw IllegalStateException()
+    return fetchProjectByCode(project.code)
 }
 
 fun fetchProjectById(id: Int): Project? {
