@@ -1,26 +1,17 @@
 package com.helicoptera.togerio.authorization.validation
 
-import com.helicoptera.togerio.validation.ValidationResult
-
 private const val MIN_USERNAME_LENGTH = 6
 private const val USERNAME_PATTERN = "[a-zA-Z0-9_.]+"
+private const val USERNAME_PATTERN_DESCRIPTION = "should be consists of digits, letters, dots or underscores"
 
 class UsernameValidator {
 
-    fun validateUsername(username: String?): ValidationResult {
-        return when {
-            username == null -> {
-                ValidationResult(errorDescription = "Username can not be null")
-            }
-            username.length < MIN_USERNAME_LENGTH -> {
-                ValidationResult(errorDescription = "Login should be at least $MIN_USERNAME_LENGTH characters long")
-            }
-            !USERNAME_PATTERN.toRegex().matches(username) -> {
-                ValidationResult(errorDescription = "Login should be consists of digits, letters, dots or underscores");
-            }
-            else -> {
-                ValidationResult(true)
-            }
-        }
-    }
+    private val validator = Validator(
+        "Username",
+        minLengthSize = MIN_USERNAME_LENGTH,
+        pattern = USERNAME_PATTERN,
+        patternDescription = USERNAME_PATTERN_DESCRIPTION
+    )
+
+    fun validateUsername(username: String?) = validator.validate(username)
 }
