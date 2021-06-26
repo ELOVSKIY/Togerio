@@ -18,8 +18,8 @@ object ProjectMembers : Table("ProjectMembers") {
         onUpdate = ReferenceOption.CASCADE,
         fkName = "FK_User_Id"
     )
-    val completeTaskCount = integer("completeTaskCount")
-    val processingTaskCount = integer("completeTaskCount")
+    val completeTaskCount = integer("completeTaskCount").default(0)
+    val processingTaskCount = integer("completeTaskCount").default(0)
 
     override val primaryKey = PrimaryKey(id, name = "PK_ProjectMember_ID")
 }
