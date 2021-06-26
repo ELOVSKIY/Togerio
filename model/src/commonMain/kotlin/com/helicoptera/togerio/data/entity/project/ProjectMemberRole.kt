@@ -1,6 +1,7 @@
-package com.helicoptera.togerio.data.model.project
+package com.helicoptera.togerio.data.entity.project
 
 enum class ProjectMemberRole {
+    NEW,
     OWNER,
     DEVELOPER,
     TESTER,

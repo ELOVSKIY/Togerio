@@ -1,4 +1,4 @@
-package com.helicoptera.togerio.data.model.task
+package com.helicoptera.togerio.data.entity.task
 
 enum class TaskStatus {
     CREATE_REQUEST,

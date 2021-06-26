@@ -1,6 +1,6 @@
-package com.helicoptera.togerio.data.model.task
+package com.helicoptera.togerio.data.entity.task
 
-import com.helicoptera.togerio.data.model.team.TeamMember
+import com.helicoptera.togerio.data.entity.team.TeamMember
 
 data class Task(
     val number: Int,

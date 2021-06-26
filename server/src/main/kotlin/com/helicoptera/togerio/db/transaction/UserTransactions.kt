@@ -1,6 +1,6 @@
 package com.helicoptera.togerio.db.transaction
 
-import com.helicoptera.togerio.data.model.User
+import com.helicoptera.togerio.data.entity.User
 import com.helicoptera.togerio.db.table.Users
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
@@ -22,7 +22,7 @@ fun fetchUserByUsername(username: String): User? {
     val resultRow = transaction {
         Users.select {
             Users.username eq username
-        }.toList()
+        }
     }.firstOrNull()
 
     return if (resultRow != null) Users.toUserModel(resultRow) else null
@@ -32,7 +32,7 @@ fun fetchUserByUserId(id: Int): User? {
     val resultRow = transaction {
         Users.select {
             Users.id eq id
-        }.toList()
+        }
     }.firstOrNull()
 
     return if (resultRow != null) Users.toUserModel(resultRow) else null

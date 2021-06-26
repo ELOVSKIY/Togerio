@@ -1,4 +1,4 @@
-package com.helicoptera.togerio.data.model.team
+package com.helicoptera.togerio.data.entity.team
 
 data class TeamMember(
     val user: String,
