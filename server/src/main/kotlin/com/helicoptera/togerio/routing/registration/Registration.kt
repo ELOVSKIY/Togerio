@@ -4,7 +4,7 @@ import com.helicoptera.togerio.authentification.JwtManager
 import com.helicoptera.togerio.authentification.principal.UserPrincipal
 import com.helicoptera.togerio.authorization.validation.PasswordValidator
 import com.helicoptera.togerio.authorization.validation.UsernameValidator
-import com.helicoptera.togerio.data.model.User
+import com.helicoptera.togerio.data.entity.User
 import com.helicoptera.togerio.data.network.NetworkResponse
 import com.helicoptera.togerio.db.transaction.fetchUserByUserId
 import com.helicoptera.togerio.db.transaction.fetchUserByUsername

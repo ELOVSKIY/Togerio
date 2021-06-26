@@ -1,6 +1,6 @@
 package com.helicoptera.togerio.user
 
-import com.helicoptera.togerio.data.model.project.ProjectMember
+import com.helicoptera.togerio.data.entity.project.ProjectMember
 
 interface ProjectManager {
 
