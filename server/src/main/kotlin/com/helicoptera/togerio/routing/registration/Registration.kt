@@ -18,11 +18,12 @@ import io.ktor.auth.*
 import io.ktor.request.*
 import io.ktor.response.*
 
+@KtorExperimentalLocationsAPI
 fun Routing.registration(jwtManager: JwtManager) {
     val usernameValidator = UsernameValidator()
     val passwordValidator = PasswordValidator()
 
-    post<RegistrationLocation> { registration ->
+    post<RegistrationLocation> { _ ->
         suspend fun respondSuccess(user: User) {
             val userPrincipal = UserPrincipal(user.id)
             val token = jwtManager.makeToken(userPrincipal)
@@ -37,19 +38,19 @@ fun Routing.registration(jwtManager: JwtManager) {
             val user = call.receive<User>()
             val usernameValidationResult = usernameValidator.validateUsername(user.username)
             if (usernameValidationResult.valid) {
-                val userWithSameUsername = fetchUserByUsername(user.username)
-                if (userWithSameUsername == null) {
-                    val passwordValidationResult = passwordValidator.validatePassword(user.password)
-                    if (passwordValidationResult.valid) {
+                val passwordValidationResult = passwordValidator.validatePassword(user.password)
+                if (passwordValidationResult.valid) {
+                    val userWithSameUsername = fetchUserByUsername(user.username)
+                    if (userWithSameUsername == null) {
                         val passwordHash = md5(user.password)
                         val processedUser = User(username = user.username, password = passwordHash)
                         val insertedUser = insertUser(processedUser)
                         respondSuccess(insertedUser)
                     } else {
-                        respondFailure(passwordValidationResult.errorDescription)
+                        respondFailure("Username is busy")
                     }
                 } else {
-                    respondFailure("Username is busy")
+                    respondFailure(passwordValidationResult.errorDescription)
                 }
             } else {
                 respondFailure(usernameValidationResult.errorDescription)

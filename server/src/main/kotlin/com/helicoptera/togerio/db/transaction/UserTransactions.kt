@@ -22,8 +22,8 @@ fun fetchUserByUsername(username: String): User? {
     val resultRow = transaction {
         Users.select {
             Users.username eq username
-        }
-    }.firstOrNull()
+        }.firstOrNull()
+    }
 
     return if (resultRow != null) Users.toUserModel(resultRow) else null
 }
@@ -32,8 +32,8 @@ fun fetchUserByUserId(id: Int): User? {
     val resultRow = transaction {
         Users.select {
             Users.id eq id
-        }
-    }.firstOrNull()
+        }.firstOrNull()
+    }
 
     return if (resultRow != null) Users.toUserModel(resultRow) else null
 }

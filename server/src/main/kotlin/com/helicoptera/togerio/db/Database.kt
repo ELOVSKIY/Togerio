@@ -5,7 +5,7 @@ import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 
-fun initDB(testing: Boolean) {
+fun initDB() {
     Database.connect("jdbc:h2:./myh2file", "org.h2.Driver")
     dropSchemas()
     createSchemas()

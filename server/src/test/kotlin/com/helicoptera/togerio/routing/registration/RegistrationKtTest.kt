@@ -7,6 +7,7 @@ import com.helicoptera.togerio.data.network.NetworkResponse
 import com.helicoptera.togerio.main
 import io.ktor.application.*
 import io.ktor.http.*
+import io.ktor.locations.*
 import io.ktor.server.testing.*
 
 import org.junit.Assert.*
@@ -19,6 +20,7 @@ private const val USERNAME_KEY = "username"
 private const val PASSWORD_KEY = "password"
 private const val URI = "/registration"
 
+@KtorExperimentalLocationsAPI
 class RegistrationKtTest {
 
     private lateinit var jsonObject: JsonObject

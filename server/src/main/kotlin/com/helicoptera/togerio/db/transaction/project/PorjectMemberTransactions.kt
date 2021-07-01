@@ -38,7 +38,7 @@ fun fetchAllUsersForProject(projectId: Int) : List<Project> {
         it[ProjectMembers.id]
     }
 
-    return projectsIds.mapNotNull { projectId ->
-        fetchProjectById(projectId)
+    return projectsIds.mapNotNull { id ->
+        fetchProjectById(id)
     }
 }

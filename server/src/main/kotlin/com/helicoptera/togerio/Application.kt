@@ -21,10 +21,10 @@ fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
 }
 
+@KtorExperimentalLocationsAPI
 @Suppress("unused")
-@kotlin.jvm.JvmOverloads
-fun Application.main(testing: Boolean = false) {
-    initDB(testing)
+fun Application.main() {
+    initDB()
     val jwtManager = JwtManager(environment)
 
     install(Authentication) {

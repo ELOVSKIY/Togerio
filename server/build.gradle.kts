@@ -5,9 +5,28 @@ val kotlin_version: String by project
 val logback_version: String by project
 val h2_version: String by project
 val exposed_version: String by project
+val checkstyle_version: String by project
+val jacoco_version: String by project
 
 plugins {
     kotlin("jvm")
+    checkstyle
+    jacoco
+    pmd
+}
+
+checkstyle {
+    toolVersion = checkstyle_version
+    configFile = file("config/checkstyle/style.xml")
+    reporting.baseDir = buildDir
+}
+
+jacoco {
+    toolVersion = jacoco_version
+}
+
+pmd {
+    isIgnoreFailures = true
 }
 
 group = "com.helicoptera"
@@ -47,4 +66,23 @@ tasks.test {
 
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks {
+    jacocoTestCoverageVerification {
+        violationRules {
+            rule { limit { minimum = BigDecimal.valueOf(0.2) } }
+        }
+    }
+    check {
+        dependsOn(jacocoTestCoverageVerification)
+    }
+}
+
+tasks.withType<Checkstyle>().configureEach {
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        html.stylesheet = resources.text.fromFile("config/xsl/checkstyle-custom.xsl")
+    }
 }
