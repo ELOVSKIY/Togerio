@@ -5,6 +5,7 @@ import com.google.gson.JsonObject
 import com.google.gson.JsonPrimitive
 import com.helicoptera.togerio.data.network.NetworkResponse
 import com.helicoptera.togerio.main
+import com.helicoptera.togerio.module
 import io.ktor.application.*
 import io.ktor.http.*
 import io.ktor.locations.*
@@ -34,7 +35,7 @@ class RegistrationKtTest {
     }
 
     @Test
-    fun testRegistration() = withTestApplication(Application::main) {
+    fun testRegistration() = withTestApplication(Application::module) {
         val request = handleRequest {
             method = HttpMethod.Post
             addHeader(HttpHeaders.ContentType, ContentType.Application.Json.toString())
@@ -57,7 +58,7 @@ class RegistrationKtTest {
     }
 
     @Test
-    fun testRegistrationWithoutUsername() = withTestApplication(Application::main) {
+    fun testRegistrationWithoutUsername() = withTestApplication(Application::module) {
         jsonObject.remove(USERNAME_KEY)
         val request = handleRequest {
             method = HttpMethod.Post
@@ -80,7 +81,7 @@ class RegistrationKtTest {
     }
 
     @Test
-    fun testRegistrationWithoutPassword() = withTestApplication(Application::main) {
+    fun testRegistrationWithoutPassword() = withTestApplication(Application::module) {
         jsonObject.remove(PASSWORD_KEY)
         val request = handleRequest {
             method = HttpMethod.Post

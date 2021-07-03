@@ -13,17 +13,17 @@ import io.ktor.gson.*
 import io.ktor.http.*
 import io.ktor.http.content.*
 import io.ktor.locations.*
+import io.ktor.response.*
 import io.ktor.routing.*
 import org.slf4j.event.Level
 
 fun main(args: Array<String>) {
-
     io.ktor.server.netty.EngineMain.main(args)
 }
 
 @KtorExperimentalLocationsAPI
 @Suppress("unused")
-fun Application.main() {
+fun Application.module() {
     initDB()
     val jwtManager = JwtManager(environment)
 
@@ -62,6 +62,9 @@ fun Application.main() {
     }
     routing {
         root(jwtManager)
+        get("/lol") {
+            call.respond("Lol")
+        }
         static {
             //Url path to static folder
             static("static") {
