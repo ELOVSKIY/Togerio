@@ -1,7 +1,6 @@
-package com.helicoptera.togerio.data.entity.issue
+package com.helicoptera.togerio.data.dto.project.issue
 
 data class Version(
-    val id: Int,
     val title: String,
     val date: String,
     val description: String,

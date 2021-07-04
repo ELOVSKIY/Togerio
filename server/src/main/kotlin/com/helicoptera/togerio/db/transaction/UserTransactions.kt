@@ -1,23 +1,23 @@
 package com.helicoptera.togerio.db.transaction
 
-import com.helicoptera.togerio.data.entity.User
+import com.helicoptera.togerio.data.entity.UserEntity
 import com.helicoptera.togerio.db.table.Users
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 
-fun insertUser(user: User) : User{
+fun insertUser(userEntity: UserEntity) : UserEntity{
     transaction {
         Users.insert {
-            it[username] = user.username
-            it[password] = md5(user.password)
+            it[username] = userEntity.username
+            it[password] = md5(userEntity.password)
         }
     }
 
-    return fetchUserByUsername(user.username) ?: throw IllegalStateException()
+    return fetchUserByUsername(userEntity.username) ?: throw IllegalStateException()
 }
 
-fun fetchUserByUsername(username: String): User? {
+fun fetchUserByUsername(username: String): UserEntity? {
     val resultRow = transaction {
         Users.select {
             Users.username eq username
@@ -27,7 +27,7 @@ fun fetchUserByUsername(username: String): User? {
     return if (resultRow != null) Users.toUserModel(resultRow) else null
 }
 
-fun fetchUserByUserId(id: Int): User? {
+fun fetchUserByUserId(id: Int): UserEntity? {
     val resultRow = transaction {
         Users.select {
             Users.id eq id

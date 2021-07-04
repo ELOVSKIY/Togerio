@@ -1,7 +1,6 @@
 package com.helicoptera.togerio.db.table
 
-import com.helicoptera.togerio.data.entity.issue.Issue
-import com.helicoptera.togerio.data.entity.project.Project
+import com.helicoptera.togerio.data.dto.project.issue.IssueEntity
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 
@@ -13,8 +12,8 @@ object Issues : Table("Issues") {
 
     override val primaryKey = PrimaryKey(id, name = "PK_Issue_ID")
 
-    fun toProjectModel(row: ResultRow): Issue {
-        return Issue(
+    fun toProjectModel(row: ResultRow): IssueEntity {
+        return IssueEntity(
             id = row[id],
             title = row[title],
             description = row[description],

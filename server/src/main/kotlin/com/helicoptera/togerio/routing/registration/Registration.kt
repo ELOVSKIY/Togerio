@@ -4,7 +4,7 @@ import com.helicoptera.togerio.authentification.JwtManager
 import com.helicoptera.togerio.authentification.principal.UserPrincipal
 import com.helicoptera.togerio.authorization.validation.PasswordValidator
 import com.helicoptera.togerio.authorization.validation.UsernameValidator
-import com.helicoptera.togerio.data.entity.User
+import com.helicoptera.togerio.data.entity.UserEntity
 import com.helicoptera.togerio.data.network.NetworkResponse
 import com.helicoptera.togerio.db.transaction.fetchUserByUserId
 import com.helicoptera.togerio.db.transaction.fetchUserByUsername
@@ -24,8 +24,8 @@ fun Routing.registration(jwtManager: JwtManager) {
     val passwordValidator = PasswordValidator()
 
     post<RegistrationLocation> { _ ->
-        suspend fun respondSuccess(user: User) {
-            val userPrincipal = UserPrincipal(user.id)
+        suspend fun respondSuccess(userEntity: UserEntity) {
+            val userPrincipal = UserPrincipal(userEntity.id)
             val token = jwtManager.makeToken(userPrincipal)
             call.respond(NetworkResponse(value = token))
         }
@@ -35,7 +35,7 @@ fun Routing.registration(jwtManager: JwtManager) {
         }
 
         suspend fun register() {
-            val user = call.receive<User>()
+            val user = call.receive<UserEntity>()
             val usernameValidationResult = usernameValidator.validateUsername(user.username)
             if (usernameValidationResult.valid) {
                 val passwordValidationResult = passwordValidator.validatePassword(user.password)
@@ -43,7 +43,7 @@ fun Routing.registration(jwtManager: JwtManager) {
                     val userWithSameUsername = fetchUserByUsername(user.username)
                     if (userWithSameUsername == null) {
                         val passwordHash = md5(user.password)
-                        val processedUser = User(username = user.username, password = passwordHash)
+                        val processedUser = UserEntity(username = user.username, password = passwordHash)
                         val insertedUser = insertUser(processedUser)
                         respondSuccess(insertedUser)
                     } else {

@@ -1,6 +1,7 @@
-package com.helicoptera.togerio.data.entity.issue
+package com.helicoptera.togerio.data.entity.project.issue
 
-data class State (
+data class StateEntity (
+    val id: Int,
     val title: String,
     val description: String,
     val complete: Boolean,

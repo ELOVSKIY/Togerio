@@ -1,6 +1,6 @@
 package com.helicoptera.togerio.authorization.validation.project
 
-import com.helicoptera.togerio.data.entity.project.Project
+import com.helicoptera.togerio.data.dto.project.Project
 import com.helicoptera.togerio.validation.ValidationResult
 
 class ProjectValidator {

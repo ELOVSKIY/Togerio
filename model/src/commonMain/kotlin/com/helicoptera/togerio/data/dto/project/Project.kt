@@ -1,4 +1,4 @@
-package com.helicoptera.togerio.data.entity.project
+package com.helicoptera.togerio.data.dto.project
 
 data class Project(
     val id: Int = 0,

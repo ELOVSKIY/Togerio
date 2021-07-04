@@ -1,7 +1,7 @@
 package com.helicoptera.togerio.routing.projects
 
 import com.helicoptera.togerio.authorization.validation.project.ProjectValidator
-import com.helicoptera.togerio.data.entity.project.Project
+import com.helicoptera.togerio.data.dto.project.Project
 import com.helicoptera.togerio.data.network.NetworkResponse
 import com.helicoptera.togerio.db.transaction.fetchUserByUsername
 import com.helicoptera.togerio.db.transaction.project.createProject

@@ -1,6 +1,6 @@
 package com.helicoptera.togerio.db.table
 
-import com.helicoptera.togerio.data.entity.project.Project
+import com.helicoptera.togerio.data.dto.project.Project
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 

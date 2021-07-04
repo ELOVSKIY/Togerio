@@ -1,7 +1,7 @@
 package com.helicoptera.togerio.db.transaction.project
 
-import com.helicoptera.togerio.data.entity.User
-import com.helicoptera.togerio.data.entity.project.Project
+import com.helicoptera.togerio.data.entity.UserEntity
+import com.helicoptera.togerio.data.dto.project.Project
 import com.helicoptera.togerio.db.table.ProjectMembers
 import com.helicoptera.togerio.db.table.Users
 import com.helicoptera.togerio.db.transaction.fetchUserByUserId
@@ -32,7 +32,7 @@ fun fetchAllProjectsForUser(userId: Int): List<Project> {
     }
 }
 
-fun fetchAllUsersForProject(projectId: Int): List<User> {
+fun fetchAllUsersForProject(projectId: Int): List<UserEntity> {
     val projectsIds = transaction {
         ProjectMembers.select {
             ProjectMembers.projectId eq projectId

@@ -1,7 +1,6 @@
-package com.helicoptera.togerio.data.entity
+package com.helicoptera.togerio.data.dto
 
 data class User(
-    val id: Int = 0,
     val username: String,
     val password: String
 )

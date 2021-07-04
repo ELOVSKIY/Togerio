@@ -1,6 +1,6 @@
 package com.helicoptera.togerio.db.table
 
-import com.helicoptera.togerio.data.entity.User
+import com.helicoptera.togerio.data.entity.UserEntity
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 
@@ -12,8 +12,8 @@ object Users : Table("Users") {
 
     override val primaryKey = PrimaryKey(id, name="PK_User_ID")
 
-    fun toUserModel(row: ResultRow): User {
-        return User(
+    fun toUserModel(row: ResultRow): UserEntity {
+        return UserEntity(
             id = row[id],
             username = row[username],
             password = row[password]
