@@ -19,7 +19,7 @@ object ProjectMembers : Table("ProjectMembers") {
         fkName = "FK_User_Id"
     )
     val completeTaskCount = integer("completeTaskCount").default(0)
-    val processingTaskCount = integer("completeTaskCount").default(0)
+    val processingTaskCount = integer("processingTaskCount").default(0)
 
     override val primaryKey = PrimaryKey(id, name = "PK_ProjectMember_ID")
 }

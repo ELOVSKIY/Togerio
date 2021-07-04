@@ -26,7 +26,7 @@ fun fetchProjectById(id: Int): Project? {
     }.firstOrNull()
 
 
-    return if (resultRow != null) Projects.toProjectModel(resultRow) else null
+    return if (resultRow != null) Projects.createEntityFromRow(resultRow) else null
 }
 
 fun fetchProjectByCode(code: String): Project? {
@@ -36,5 +36,5 @@ fun fetchProjectByCode(code: String): Project? {
         }
     }.firstOrNull()
 
-    return if (resultRow != null) Projects.toProjectModel(resultRow) else null
+    return if (resultRow != null) Projects.createEntityFromRow(resultRow) else null
 }

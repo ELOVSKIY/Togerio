@@ -12,7 +12,7 @@ object Users : Table("Users") {
 
     override val primaryKey = PrimaryKey(id, name="PK_User_ID")
 
-    fun toUserModel(row: ResultRow): UserEntity {
+    fun createEntityFromRow(row: ResultRow): UserEntity {
         return UserEntity(
             id = row[id],
             username = row[username],

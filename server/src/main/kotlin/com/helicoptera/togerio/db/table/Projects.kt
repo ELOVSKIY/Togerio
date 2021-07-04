@@ -13,7 +13,7 @@ object Projects : Table("Projects") {
 
     override val primaryKey = PrimaryKey(id, name = "PK_Project_ID")
 
-    fun toProjectModel(row: ResultRow): Project {
+    fun createEntityFromRow(row: ResultRow): Project {
         return Project(
             id = row[id],
             name = row[name],
