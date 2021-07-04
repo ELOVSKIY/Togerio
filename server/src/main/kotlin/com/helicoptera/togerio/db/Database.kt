@@ -1,5 +1,7 @@
 package com.helicoptera.togerio.db
 
+import com.helicoptera.togerio.db.table.ProjectMembers
+import com.helicoptera.togerio.db.table.Projects
 import com.helicoptera.togerio.db.table.Users
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
@@ -20,5 +22,7 @@ private fun dropSchemas() {
 private fun createSchemas() {
     transaction {
         SchemaUtils.create(Users)
+        SchemaUtils.create(Projects)
+        SchemaUtils.create(ProjectMembers)
     }
 }

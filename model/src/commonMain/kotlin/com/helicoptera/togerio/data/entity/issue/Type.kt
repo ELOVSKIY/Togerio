@@ -1,4 +1,4 @@
-package com.helicoptera.togerio.data.entity.task
+package com.helicoptera.togerio.data.entity.issue
 
 data class Type (
     val title: String,

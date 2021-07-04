@@ -1,6 +1,6 @@
-package com.helicoptera.togerio.data.entity.task
+package com.helicoptera.togerio.data.entity.issue
 
-data class Task(
+data class Issue(
     val taskId: Int,
     val title: String,
     val descriptions: String,

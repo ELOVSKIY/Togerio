@@ -1,7 +1,5 @@
 package com.helicoptera.togerio.user
 
-import com.helicoptera.togerio.data.entity.project.ProjectMember
-
 interface ProjectManager {
 
     fun createProject(name: String, code: String, description: String)

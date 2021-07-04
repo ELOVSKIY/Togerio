@@ -1,4 +1,4 @@
-package com.helicoptera.togerio.routing.project
+package com.helicoptera.togerio.routing.projects
 
 import com.helicoptera.togerio.authorization.validation.project.ProjectValidator
 import com.helicoptera.togerio.data.entity.project.Project
