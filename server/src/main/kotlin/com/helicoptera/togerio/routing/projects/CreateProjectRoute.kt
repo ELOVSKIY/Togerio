@@ -10,8 +10,8 @@ import com.helicoptera.togerio.db.transaction.project.fetchProjectByCode
 import com.helicoptera.togerio.routing.processUserPrincipal
 import com.helicoptera.togerio.routing.processValidationResult
 import io.ktor.application.*
-import io.ktor.request.*
 import io.ktor.locations.*
+import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
 

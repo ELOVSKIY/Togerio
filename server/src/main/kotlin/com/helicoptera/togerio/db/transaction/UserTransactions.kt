@@ -5,7 +5,6 @@ import com.helicoptera.togerio.db.table.Users
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
-import java.lang.IllegalStateException
 
 fun insertUser(user: User) : User{
     transaction {
