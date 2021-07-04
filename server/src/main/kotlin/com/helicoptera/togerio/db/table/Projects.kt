@@ -18,7 +18,7 @@ object Projects : Table("Projects") {
             id = row[id],
             name = row[name],
             code = row[code],
-            descriptions = row[description],
+            description = row[description],
         )
     }
 }

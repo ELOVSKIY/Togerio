@@ -1,12 +1,12 @@
 package com.helicoptera.togerio.data.entity.issue
 
 data class Issue(
-    val taskId: Int,
+    val id: Int,
     val title: String,
-    val descriptions: String,
-    val priority: Priority,
-    val type: Type,
-    val state: State,
-    val fixVersions: List<Version>,
-    val affectVersions: List<Version>
+    val description: String? = null,
+    val priority: Priority? = null,
+    val type: Type? = null,
+    val state: State? = null,
+    val fixVersions: List<Version> = listOf(),
+    val affectVersions: List<Version> = listOf()
 )

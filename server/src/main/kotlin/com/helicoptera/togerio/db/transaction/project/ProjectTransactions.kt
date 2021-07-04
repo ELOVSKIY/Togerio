@@ -11,7 +11,7 @@ fun createProject(project: Project): Project? {
         Projects.insert {
             it[name] = project.name
             it[code] =  project.code
-            it[description] =  project.descriptions
+            it[description] =  project.description
         }
     }
 
