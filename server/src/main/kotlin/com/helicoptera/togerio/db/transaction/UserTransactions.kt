@@ -24,7 +24,7 @@ fun fetchUserByUsername(username: String): UserEntity? {
         }.firstOrNull()
     }
 
-    return if (resultRow != null) Users.toUserModel(resultRow) else null
+    return if (resultRow != null) Users.createEntityFromRow(resultRow) else null
 }
 
 fun fetchUserByUserId(id: Int): UserEntity? {
@@ -34,5 +34,5 @@ fun fetchUserByUserId(id: Int): UserEntity? {
         }.firstOrNull()
     }
 
-    return if (resultRow != null) Users.toUserModel(resultRow) else null
+    return if (resultRow != null) Users.createEntityFromRow(resultRow) else null
 }
