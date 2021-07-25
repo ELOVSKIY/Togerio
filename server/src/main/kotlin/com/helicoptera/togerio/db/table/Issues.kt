@@ -17,28 +17,28 @@ object Issues : Table("Issues") {
         Projects.id,
         onDelete = ReferenceOption.CASCADE,
         onUpdate = ReferenceOption.CASCADE,
-        fkName = "FK_Project_Id"
+        fkName = "FK_Issue_Project_Id"
     )
 
     val priorityId = integer("priorityId").references(
         Priorities.id,
         onDelete = ReferenceOption.SET_NULL,
         onUpdate = ReferenceOption.SET_NULL,
-        fkName = "FK_Priority_Id"
+        fkName = "FK_Issue_Priority_Id"
     )
 
     val typeId = integer("typeId").references(
         Types.id,
         onDelete = ReferenceOption.SET_NULL,
         onUpdate = ReferenceOption.SET_NULL,
-        fkName = "FK_Type_Id"
+        fkName = "FK_Issue_Type_Id"
     )
 
     val stateId = integer("stateId").references(
         States.id,
         onDelete = ReferenceOption.SET_NULL,
         onUpdate = ReferenceOption.SET_NULL,
-        fkName = "FK_Type_Id"
+        fkName = "FK_Issue_State_Id"
     )
 
     override val primaryKey = PrimaryKey(id, name = "PK_Issue_ID")

@@ -14,14 +14,14 @@ object Versions : Table("Versions") {
         Projects.id,
         onDelete = ReferenceOption.CASCADE,
         onUpdate = ReferenceOption.CASCADE,
-        fkName = "FK_Project_Id"
+        fkName = "FK_Version_Project_Id"
     )
     val title = varchar("title", length = 255).uniqueIndex()
     val date = Issues.varchar("date", length = 255)
     val description = varchar("description", length = 255)
     val color = varchar("color", length = 9)
 
-    override val primaryKey = PrimaryKey(id, name="PK_Priority_ID")
+    override val primaryKey = PrimaryKey(id, name="PK_Version_ID")
 
     fun createEntityFromRow(row: ResultRow): VersionEntity {
         return VersionEntity(

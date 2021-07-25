@@ -14,7 +14,7 @@ object States : Table("States") {
         Projects.id,
         onDelete = ReferenceOption.CASCADE,
         onUpdate = ReferenceOption.CASCADE,
-        fkName = "FK_Project_Id"
+        fkName = "FK_State_Project_Id"
     )
     val title = varchar("title", length = 255).uniqueIndex()
     val description = varchar("description", length = 255)

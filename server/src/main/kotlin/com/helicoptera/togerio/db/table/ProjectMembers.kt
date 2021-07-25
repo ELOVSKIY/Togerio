@@ -10,13 +10,13 @@ object ProjectMembers : Table("ProjectMembers") {
         Projects.id,
         onDelete = ReferenceOption.CASCADE,
         onUpdate = ReferenceOption.CASCADE,
-        fkName = "FK_Project_Id"
+        fkName = "FK_User_Project_Id"
     )
     val userId = integer("userId").references(
         Users.id,
         onDelete = ReferenceOption.CASCADE,
         onUpdate = ReferenceOption.CASCADE,
-        fkName = "FK_User_Id"
+        fkName = "FK_Project_User_Id"
     )
     val completeTaskCount = integer("completeTaskCount").default(0)
     val processingTaskCount = integer("processingTaskCount").default(0)
