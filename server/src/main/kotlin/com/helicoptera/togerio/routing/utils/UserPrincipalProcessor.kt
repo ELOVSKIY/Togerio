@@ -1,4 +1,4 @@
-package com.helicoptera.togerio.routing
+package com.helicoptera.togerio.routing.utils
 
 import com.helicoptera.togerio.authentification.principal.UserPrincipal
 import io.ktor.application.*
