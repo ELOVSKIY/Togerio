@@ -23,10 +23,10 @@ android {
     compileSdkVersion(29)
     defaultConfig {
         applicationId = "com.helicoptera.android"
-        minSdkVersion(24)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(Configuration.Android.minSdkVersion)
+        targetSdkVersion(Configuration.Android.targetSdkVersion)
+        versionCode = Configuration.Android.versionCode
+        versionName = Configuration.Android.versionName
     }
     buildTypes {
         getByName("release") {
