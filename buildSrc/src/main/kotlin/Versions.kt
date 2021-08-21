@@ -23,8 +23,13 @@ object Versions {
             const val reactReduxVersion = "7.2.4"
             const val ringUiVersion = "4.0.21"
         }
-        object Android {
 
+        object Android {
+            const val navigationVersion = "2.3.5"
+            const val constraintVersion = "2.1.0"
+            const val appCompatVersion = "1.3.1"
+            const val materialVersion = "1.4.0"
+            const val roomVersion = "2.3.0"
         }
     }
 }
