@@ -1,5 +1,10 @@
 object Dependencies {
 
+    object Common {
+        const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Common.kotlinVersion}"
+        const val androidBuildGradle = "com.android.tools.build:gradle:${Versions.Common.andfroidBuildGradleVersion}"
+    }
+
     object Server {
         const val ktorCore = "io.ktor:ktor-server-core:${Versions.ktorVersion}"
         const val ktorGson = "io.ktor:ktor-gson:${Versions.ktorVersion}"
@@ -51,7 +56,7 @@ object Dependencies {
             //TODO(add dependencies)
             const val roomRuntime = "androidx.room:room-runtime:${Versions.Client.Android.roomVersion}"
             const val roomCompiler = "androidx.room:room-compiler:${Versions.Client.Android.roomVersion}"
-            const val roomRoomKtx = "androidx.room:room-ktx:${Versions.Client.Android.roomVersion}"
+            const val roomCoroutines = "androidx.room:room-ktx:${Versions.Client.Android.roomVersion}"
         }
     }
 }
