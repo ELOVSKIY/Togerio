@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    id("kotlin-kapt")
     id("kotlin-android-extensions")
 }
 
@@ -23,8 +24,11 @@ dependencies {
     implementation(Dependencies.Client.Android.navigationFragment)
     implementation(Dependencies.Client.Android.navigationUI)
 
-    //Room
-
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.5.21-1.0.0-beta07")
+    implementation(Dependencies.Client.Android.roomRuntime)
+    implementation(Dependencies.Client.Android.roomCompiler)
+    implementation(Dependencies.Client.Android.roomCoroutines)
+    kapt(Dependencies.Client.Android.roomCompiler)
 }
 
 android {

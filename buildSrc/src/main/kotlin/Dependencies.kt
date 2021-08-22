@@ -2,7 +2,7 @@ object Dependencies {
 
     object Common {
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Common.kotlinVersion}"
-        const val androidBuildGradle = "com.android.tools.build:gradle:${Versions.Common.andfroidBuildGradleVersion}"
+        const val androidBuildGradle = "com.android.tools.build:gradle:${Versions.Common.androidBuildGradleVersion}"
     }
 
     object Server {
