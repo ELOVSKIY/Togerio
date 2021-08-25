@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/notificationFragment">
+    app:startDestination="@id/taskFragment">
+
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.helicoptera.android.ui.content.TaskFragment"
+        android:label="fragment_task"
+        tools:layout="@layout/fragment_task" />
 
     <fragment
         android:id="@+id/notificationFragment"
-        android:name="com.helicoptera.android.ui.NotificationFragment"
+        android:name="com.helicoptera.android.ui.content.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
-    <fragment
-        android:id="@+id/taskFragment"
-        android:name="com.helicoptera.android.ui.TaskFragment"
-        android:label="fragment_task"
-        tools:layout="@layout/fragment_task" />
+
 </navigation>

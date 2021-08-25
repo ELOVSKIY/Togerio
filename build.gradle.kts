@@ -9,6 +9,7 @@ buildscript {
         classpath(Dependencies.Common.kotlin)
         classpath(Dependencies.Common.androidBuildGradle)
         classpath(Dependencies.Client.Android.hiltClassPath)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21")
     }
 }
 

@@ -27,6 +27,7 @@ dependencies {
     implementation(Dependencies.Client.Android.roomRuntime)
 //    implementation(Dependencies.Client.Android.roomCompiler)
     implementation(Dependencies.Client.Android.roomCoroutines)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(Dependencies.Client.Android.roomCompiler)
 
     implementation(Dependencies.Client.Android.hilt)
@@ -45,6 +46,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding = true
     }
     buildTypes {
         getByName("release") {
