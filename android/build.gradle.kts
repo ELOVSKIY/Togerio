@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("kotlin-android-extensions")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 group = "com.helicoptera"
@@ -14,23 +15,48 @@ repositories {
 
 dependencies {
     implementation(project(":model"))
-    implementation("com.google.android.material:material:1.2.1")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.2")
+
+    implementation(Dependencies.Client.Android.constraintLayout)
+    implementation(Dependencies.Client.Android.appCompat)
+    implementation(Dependencies.Client.Android.material)
+
+    //Navigation
+    implementation(Dependencies.Client.Android.navigationFragment)
+    implementation(Dependencies.Client.Android.navigationUI)
+
+    implementation(Dependencies.Client.Android.roomRuntime)
+//    implementation(Dependencies.Client.Android.roomCompiler)
+    implementation(Dependencies.Client.Android.roomCoroutines)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    kapt(Dependencies.Client.Android.roomCompiler)
+
+    implementation(Dependencies.Client.Android.hilt)
+    kapt(Dependencies.Client.Android.hiltCompilerKapt)
 }
 
 android {
     compileSdkVersion(29)
     defaultConfig {
         applicationId = "com.helicoptera.android"
-        minSdkVersion(24)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(Configuration.Android.minSdkVersion)
+        targetSdkVersion(Configuration.Android.targetSdkVersion)
+        versionCode = Configuration.Android.versionCode
+        versionName = Configuration.Android.versionName
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding = true
     }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
         }
     }
+}
+
+kapt {
+    correctErrorTypes = true
 }

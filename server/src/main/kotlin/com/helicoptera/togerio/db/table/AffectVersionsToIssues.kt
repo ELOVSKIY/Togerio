@@ -13,14 +13,14 @@ object AffectVersionsToIssues : Table("AffectVersionsToIssues") {
         Issues.id,
         onDelete = ReferenceOption.CASCADE,
         onUpdate = ReferenceOption.CASCADE,
-        fkName = "FK_Project_Id"
+        fkName = "FK_AffectVersion_Issue_Id"
     )
 
     val versionId = integer("versionId").references(
         Versions.id,
         onDelete = ReferenceOption.CASCADE,
         onUpdate = ReferenceOption.CASCADE,
-        fkName = "FK_Project_Id"
+        fkName = "FK_Issue_AffectVersion_Id"
     )
 
     override val primaryKey = PrimaryKey(id, name="PK_AffectVersionsToIssues_ID")

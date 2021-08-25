@@ -7,13 +7,14 @@ import com.helicoptera.togerio.db.transaction.fetchUserByUsername
 import com.helicoptera.togerio.db.transaction.project.createProject
 import com.helicoptera.togerio.db.transaction.project.createProjectMember
 import com.helicoptera.togerio.db.transaction.project.fetchProjectByCode
-import com.helicoptera.togerio.routing.processUserPrincipal
-import com.helicoptera.togerio.routing.processValidationResult
+import com.helicoptera.togerio.routing.utils.processUserPrincipal
+import com.helicoptera.togerio.routing.utils.processValidationResult
 import io.ktor.application.*
-import io.ktor.locations.*
+import io.ktor.locations.post
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
+
 
 fun Route.createProjectRoute() {
     val projectValidator = ProjectValidator()

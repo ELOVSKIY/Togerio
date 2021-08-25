@@ -1,13 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val ktor_version: String by project
-val kotlin_version: String by project
-val logback_version: String by project
-val h2_version: String by project
-val exposed_version: String by project
-val checkstyle_version: String by project
-val jacoco_version: String by project
-
 plugins {
     kotlin("jvm")
     checkstyle
@@ -16,13 +8,13 @@ plugins {
 }
 
 checkstyle {
-    toolVersion = checkstyle_version
+    toolVersion = Versions.checkstyleVersion
     configFile = file("config/checkstyle/style.xml")
     reporting.baseDir = buildDir
 }
 
 jacoco {
-    toolVersion = jacoco_version
+    toolVersion = Versions.jacocoVersion
 }
 
 pmd {
@@ -37,26 +29,28 @@ dependencies {
     implementation(project(":common"))
 
     //Ktor
-    implementation("io.ktor:ktor-server-core:$ktor_version")
-    implementation("io.ktor:ktor-gson:$ktor_version")
-    implementation("io.ktor:ktor-server-netty:$ktor_version")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
-    testImplementation("io.ktor:ktor-server-tests:$ktor_version")
+    implementation(Dependencies.Server.ktorCore)
+    implementation(Dependencies.Server.ktorGson)
+    implementation(Dependencies.Server.ktorServerNetty)
 
     //Authorization
-    implementation("io.ktor:ktor-auth:$ktor_version")
-    implementation("io.ktor:ktor-auth-jwt:$ktor_version")
-
-    //Database
-    implementation("org.jetbrains.exposed", "exposed-core", "$exposed_version")
-    implementation("org.jetbrains.exposed", "exposed-jdbc", "$exposed_version")
-
-    //H2 Database
-    implementation("com.h2database:h2:$h2_version")
+    implementation(Dependencies.Server.ktorAuth)
+    implementation(Dependencies.Server.ktorAuthJwt)
 
     //Locations
-    implementation("io.ktor:ktor-locations:$ktor_version")
-    testImplementation(kotlin("test-junit"))
+    implementation(Dependencies.Server.ktorLocations)
+
+    //Database
+    implementation(Dependencies.Server.exposedCore)
+    implementation(Dependencies.Server.exposedJdbc)
+
+    implementation(Dependencies.Server.logback)
+
+    //H2 Database
+    implementation(Dependencies.Server.h2Database)
+
+    testImplementation(kotlin(Dependencies.Server.Test.jUinit))
+    testImplementation(Dependencies.Server.Test.ktorServerTests)
 }
 
 tasks.test {

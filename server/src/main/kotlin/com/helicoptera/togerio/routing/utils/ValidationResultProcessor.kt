@@ -1,4 +1,4 @@
-package com.helicoptera.togerio.routing
+package com.helicoptera.togerio.routing.utils
 
 import com.helicoptera.togerio.data.network.NetworkResponse
 import com.helicoptera.togerio.validation.ValidationResult

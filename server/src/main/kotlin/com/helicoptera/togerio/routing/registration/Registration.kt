@@ -19,6 +19,7 @@ import io.ktor.request.*
 import io.ktor.response.*
 
 @KtorExperimentalLocationsAPI
+//TODO check different between route and routing
 fun Routing.registration(jwtManager: JwtManager) {
     val usernameValidator = UsernameValidator()
     val passwordValidator = PasswordValidator()

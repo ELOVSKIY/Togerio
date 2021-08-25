@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/taskFragment"
+        android:title="Task"
+        android:icon="?android:attr/fingerprintAuthDrawable"
+        />
+
+    <item
+        android:id="@+id/notificationFragment"
+        android:title="Notifications"
+        android:icon="@android:drawable/ic_dialog_email"
+        />
+</menu>
