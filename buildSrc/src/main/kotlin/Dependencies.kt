@@ -57,6 +57,10 @@ object Dependencies {
             const val roomRuntime = "androidx.room:room-runtime:${Versions.Client.Android.roomVersion}"
             const val roomCompiler = "androidx.room:room-compiler:${Versions.Client.Android.roomVersion}"
             const val roomCoroutines = "androidx.room:room-ktx:${Versions.Client.Android.roomVersion}"
+
+            const val hiltClassPath = "com.google.dagger:hilt-android-gradle-plugin:${Versions.Client.Android.hiltVersion}"
+            const val hilt = "com.google.dagger:hilt-android:${Versions.Client.Android.hiltVersion}"
+            const val hiltCompilerKapt = "com.google.dagger:hilt-android-compiler:${Versions.Client.Android.hiltVersion}"
         }
     }
 }

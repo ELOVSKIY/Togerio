@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-kapt")
-    id("kotlin-android-extensions")
+    id("dagger.hilt.android.plugin")
 }
 
 group = "com.helicoptera"
@@ -24,11 +24,13 @@ dependencies {
     implementation(Dependencies.Client.Android.navigationFragment)
     implementation(Dependencies.Client.Android.navigationUI)
 
-    implementation("com.google.devtools.ksp:symbol-processing-api:1.5.21-1.0.0-beta07")
     implementation(Dependencies.Client.Android.roomRuntime)
-    implementation(Dependencies.Client.Android.roomCompiler)
+//    implementation(Dependencies.Client.Android.roomCompiler)
     implementation(Dependencies.Client.Android.roomCoroutines)
     kapt(Dependencies.Client.Android.roomCompiler)
+
+    implementation(Dependencies.Client.Android.hilt)
+    kapt(Dependencies.Client.Android.hiltCompilerKapt)
 }
 
 android {
@@ -40,9 +42,17 @@ android {
         versionCode = Configuration.Android.versionCode
         versionName = Configuration.Android.versionName
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
         }
     }
+}
+
+kapt {
+    correctErrorTypes = true
 }

@@ -36,6 +36,7 @@ object Versions {
             const val appCompatVersion = "1.3.1"
             const val materialVersion = "1.4.0"
             const val roomVersion = "2.3.0"
+            const val hiltVersion = "2.38.1"
         }
     }
 }
