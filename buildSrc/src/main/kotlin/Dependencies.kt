@@ -28,14 +28,15 @@ object Dependencies {
     }
 
     object Client {
-        object Browser {
-            const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}"
-
+        object Network {
             const val ktorCore = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorJs = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorSerialization = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorAuth = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorLogging = "io.ktor:ktor-client-logging:$${Versions.ktorVersion}"
+        }
+        object Browser {
+            const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}"
 
             const val react = "org.jetbrains.kotlin-wrappers:kotlin-react:${Versions.Client.Browser.reactVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"
             const val reactDom = "org.jetbrains.kotlin-wrappers:kotlin-react-dom:${Versions.Client.Browser.reactVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"

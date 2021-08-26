@@ -16,12 +16,6 @@ dependencies {
     testImplementation(kotlin("test-js"))
     implementation(project(":model"))
 
-    implementation(Dependencies.Client.Browser.ktorCore)
-    implementation(Dependencies.Client.Browser.ktorJs)
-    implementation(Dependencies.Client.Browser.ktorSerialization)
-    implementation(Dependencies.Client.Browser.ktorAuth)
-    implementation(Dependencies.Client.Browser.ktorLogging)
-
     implementation(Dependencies.Client.Browser.coroutinesCore)
 
     implementation(Dependencies.Client.Browser.react)
