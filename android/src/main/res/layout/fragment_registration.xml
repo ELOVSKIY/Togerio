@@ -4,19 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.helicoptera.android.view.authorization.registration.RegistrationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.authorization.LoginFragment">
+        tools:context=".view.authorization.LoginFragment">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Username"
+            android:text="@={viewModel.username}"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:text="@={viewModel.password}"
+            app:layout_constraintTop_toBottomOf="@id/username"
+            app:layout_constraintBottom_toTopOf="@+id/passwordRepetition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/passwordRepetition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password Repetition"
+            android:text="@={viewModel.passwordRepetition}"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            app:layout_constraintBottom_toTopOf="@+id/registration2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/content"
+            android:id="@+id/registration2"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Content"
+            android:text="Registration"
+            android:onClick="@{() -> viewModel.onRegistrationClick()}"
             app:layout_constraintBottom_toTopOf="@+id/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

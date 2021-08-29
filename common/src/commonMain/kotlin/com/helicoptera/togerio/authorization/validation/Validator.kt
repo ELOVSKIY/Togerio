@@ -1,5 +1,7 @@
 package com.helicoptera.togerio.authorization.validation
 
+import com.helicoptera.togerio.validation.ValidationError
+import com.helicoptera.togerio.validation.ValidationErrorCode
 import com.helicoptera.togerio.validation.ValidationResult
 
 internal class Validator(
@@ -17,17 +19,17 @@ internal class Validator(
                 if (nullable) {
                     ValidationResult(true)
                 } else {
-                    ValidationResult(errorDescription = "$validationObjectName can not be null")
+                    ValidationResult(validationError = ValidationError(validationErrorCode = ValidationErrorCode.NULL_VALUE))
                 }
             }
             minLengthSize != null && validationObject.length < minLengthSize -> {
-                ValidationResult(errorDescription = "$validationObjectName should be at least $minLengthSize characters long")
+                ValidationResult(validationError = ValidationError("$minLengthSize", ValidationErrorCode.TOO_SMALL))
             }
             maxLengthSize != null && validationObject.length > maxLengthSize -> {
-                ValidationResult(errorDescription = "$validationObjectName should not be at least $maxLengthSize characters long")
+                ValidationResult(validationError = ValidationError("$maxLengthSize", ValidationErrorCode.TOO_LARGE))
             }
             pattern != null && !pattern.toRegex().matches(validationObject) -> {
-                ValidationResult(errorDescription = "$validationObjectName ");
+                ValidationResult(validationError = ValidationError(pattern, ValidationErrorCode.INVALID_PATTERN));
             }
             else -> {
                 ValidationResult(true)
