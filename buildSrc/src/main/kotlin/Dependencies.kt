@@ -62,6 +62,9 @@ object Dependencies {
             const val hiltClassPath = "com.google.dagger:hilt-android-gradle-plugin:${Versions.Client.Android.hiltVersion}"
             const val hilt = "com.google.dagger:hilt-android:${Versions.Client.Android.hiltVersion}"
             const val hiltCompilerKapt = "com.google.dagger:hilt-android-compiler:${Versions.Client.Android.hiltVersion}"
+
+            const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Client.Android.lifecycleVersion}"
+            const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.Client.Android.lifecycleVersion}"
         }
     }
 }

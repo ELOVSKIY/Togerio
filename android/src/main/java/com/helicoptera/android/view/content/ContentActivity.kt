@@ -1,4 +1,4 @@
-package com.helicoptera.android.ui.content
+package com.helicoptera.android.view.content
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

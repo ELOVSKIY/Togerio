@@ -1,4 +1,4 @@
-package com.helicoptera.android.ui.authorization
+package com.helicoptera.android.view.authorization
 
 import android.os.Bundle
 import android.view.LayoutInflater

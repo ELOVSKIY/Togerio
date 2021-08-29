@@ -15,22 +15,23 @@ repositories {
 
 dependencies {
     implementation(project(":model"))
+    implementation(project(":common"))
 
     implementation(Dependencies.Client.Android.constraintLayout)
     implementation(Dependencies.Client.Android.appCompat)
     implementation(Dependencies.Client.Android.material)
 
-    //Navigation
+    // Navigation
     implementation(Dependencies.Client.Android.navigationFragment)
     implementation(Dependencies.Client.Android.navigationUI)
+
+    // Lifecycle
+    implementation(Dependencies.Client.Android.lifecycleLiveData)
+    implementation(Dependencies.Client.Android.lifecycleViewModel)
 
     implementation(Dependencies.Client.Android.roomRuntime)
 //    implementation(Dependencies.Client.Android.roomCompiler)
     implementation(Dependencies.Client.Android.roomCoroutines)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.appcompat:appcompat:1.3.1")
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.0")
     kapt(Dependencies.Client.Android.roomCompiler)
 
     implementation(Dependencies.Client.Android.hilt)

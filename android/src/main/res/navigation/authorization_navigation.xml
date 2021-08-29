@@ -6,7 +6,7 @@
     app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.helicoptera.android.ui.authorization.SplashFragment"
+        android:name="com.helicoptera.android.view.authorization.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.helicoptera.android.ui.authorization.LoginFragment"
+        android:name="com.helicoptera.android.view.authorization.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.helicoptera.android.ui.authorization.RegistrationFragment"
+        android:name="com.helicoptera.android.view.authorization.registration.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <activity
         android:id="@+id/contentActivity"
-        android:name="com.helicoptera.android.ui.content.ContentActivity"
+        android:name="com.helicoptera.android.view.content.ContentActivity"
         android:label="activity_content"
         tools:layout="@layout/activity_content" />
 </navigation>

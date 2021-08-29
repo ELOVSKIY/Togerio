@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/taskFragment"
-        android:name="com.helicoptera.android.ui.content.TaskFragment"
+        android:name="com.helicoptera.android.view.content.TaskFragment"
         android:label="fragment_task"
         tools:layout="@layout/fragment_task" />
 
     <fragment
         android:id="@+id/notificationFragment"
-        android:name="com.helicoptera.android.ui.content.NotificationFragment"
+        android:name="com.helicoptera.android.view.content.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
 

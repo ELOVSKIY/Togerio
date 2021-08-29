@@ -7,7 +7,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.content.ContentActivity"
+            android:name=".view.content.ContentActivity"
             android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
