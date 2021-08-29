@@ -2,12 +2,14 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    id("com.android.library")
 }
 
 group = "com.helicoptera"
 version = "1.0-SNAPSHOT"
 
 kotlin {
+    android()
     jvm {
         compilations.all {
             kotlinOptions.jvmTarget = "1.8"
@@ -36,7 +38,6 @@ kotlin {
                 implementation(project(":model"))
 
                 implementation(Dependencies.Client.Network.ktorCore)
-                implementation(Dependencies.Client.Network.ktorJs)
                 implementation(Dependencies.Client.Network.ktorSerialization)
                 implementation(Dependencies.Client.Network.ktorAuth)
                 implementation(Dependencies.Client.Network.ktorLogging)
@@ -48,20 +49,47 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
+
+//        val androidMain by getting {
+//            dependencies {
+//                implementation(Dependencies.Client.Network.ktorAndroid)
+//            }
+//        }
+//        val androidTest by getting
+
         val jvmMain by getting
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
             }
         }
+
         val jsMain by getting
         val jsTest by getting {
             dependencies {
+                implementation(Dependencies.Client.Network.ktorJs)
                 implementation(kotlin("test-js"))
             }
         }
+
         val iosX64Main by getting
         val iosX64Test by getting
+    }
+}
+
+android {
+    compileSdkVersion(Configuration.Android.compileSdkVersion)
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+    defaultConfig {
+        minSdkVersion(Configuration.Android.minSdkVersion)
+        targetSdkVersion(Configuration.Android.targetSdkVersion)
+        versionCode = Configuration.Android.versionCode
+        versionName = Configuration.Android.versionName
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 

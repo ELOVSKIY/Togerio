@@ -31,9 +31,10 @@ object Dependencies {
         object Network {
             const val ktorCore = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorJs = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
+            const val ktorAndroid = "io.ktor:ktor-client-android:${Versions.ktorVersion}"
             const val ktorSerialization = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorAuth = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
-            const val ktorLogging = "io.ktor:ktor-client-logging:$${Versions.ktorVersion}"
+            const val ktorLogging = "io.ktor:ktor-client-logging:${Versions.ktorVersion}"
         }
         object Browser {
             const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}"
@@ -42,8 +43,8 @@ object Dependencies {
             const val reactDom = "org.jetbrains.kotlin-wrappers:kotlin-react-dom:${Versions.Client.Browser.reactVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"
             const val kotlinStyled = "org.jetbrains.kotlin-wrappers:kotlin-styled:${Versions.Client.Browser.kotlinStyledVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"
             const val reactRouterDom = "org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:${Versions.Client.Browser.routerDomVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"
-            const val redux = "org.jetbrains.kotlin-wrappers:kotlin-redux::${Versions.Client.Browser.reduxVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"
-            const val reactRedux = "org.jetbrains.kotlin-wrappers:kotlin-react-redux::${Versions.Client.Browser.reactReduxVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"
+            const val redux = "org.jetbrains.kotlin-wrappers:kotlin-redux:${Versions.Client.Browser.reduxVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"
+            const val reactRedux = "org.jetbrains.kotlin-wrappers:kotlin-react-redux:${Versions.Client.Browser.reactReduxVersion}-pre.${Versions.Client.Browser.wrapperVersion}-kotlin-${Versions.kotlinVersion}"
         }
 
         object Android {

@@ -39,7 +39,7 @@ dependencies {
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Configuration.Android.compileSdkVersion)
     defaultConfig {
         applicationId = "com.helicoptera.android"
         minSdkVersion(Configuration.Android.minSdkVersion)
