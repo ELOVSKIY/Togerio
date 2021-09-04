@@ -16,6 +16,7 @@ repositories {
 dependencies {
     implementation(project(":model"))
     implementation(project(":common"))
+    implementation(project(":client-network"))
 
     implementation(Dependencies.Client.Android.constraintLayout)
     implementation(Dependencies.Client.Android.appCompat)

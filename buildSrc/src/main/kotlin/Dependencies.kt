@@ -31,10 +31,11 @@ object Dependencies {
         object Network {
             const val ktorCore = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorJs = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
-            const val ktorAndroid = "io.ktor:ktor-client-android:${Versions.ktorVersion}"
+            const val ktorAndroid = "io.ktor:ktor-client-cio:${Versions.ktorVersion}"
             const val ktorSerialization = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorAuth = "io.ktor:ktor-client-core:${Versions.ktorVersion}"
             const val ktorLogging = "io.ktor:ktor-client-logging:${Versions.ktorVersion}"
+            const val ktorGson = "io.ktor:ktor-client-gson:${Versions.ktorVersion}"
         }
         object Browser {
             const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}"
